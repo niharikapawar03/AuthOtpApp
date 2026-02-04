@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1040530128967",
+    "project_id": "lokalassignment",
+    "storage_bucket": "lokalassignment.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040530128967:android:ca5750399a7ab3b928f162",
+        "android_client_info": {
+          "package_name": "com.niharika.otpapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIdq1fkdHxj2LdiRzrzCc6AHAgRyUwu70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

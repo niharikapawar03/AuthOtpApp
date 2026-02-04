@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.niharika.otpapp-mergeDebugResources-62:/values-ldrtl-v17/values-ldrtl-v17.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\hp5cd\\.gradle\\caches\\8.10\\transforms\\ccb21f73b9397f2f42b39e4b370fbf07\\transformed\\material-1.11.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,191",
+                        "endColumns": "135,140",
+                        "endOffsets": "186,327"
+                    }
+                }
+            ]
+        }
+    ]
+}
