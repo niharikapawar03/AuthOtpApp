@@ -1,20 +1,169 @@
-# OTP App Notes
+🔐 OTP Verification App
 
-## 1. OTP generation and expiry logic
-- `OtpManager.generateOtp(email)` creates a 6-digit numeric OTP, stores it with `generatedAtMillis`, and resets remaining attempts to 3. A new OTP overwrites any existing OTP for the same email.
-- `validateOtp(email, otp)` checks in order: exists, not expired (60 seconds), attempts remaining, and match. On failure it returns a specific result and decrements attempts where an OTP exists.
+A simple Android application that demonstrates secure OTP (One-Time Password) generation and validation logic, including expiry handling, attempt limits, and Firebase Analytics integration.
 
-## 2. Data structure used and why
-- `MutableMap<String, OtpData>` keyed by email is used for O(1) access and to keep OTPs isolated per user without persistence.
+📌 Features
 
-## 3. External SDK chosen and why
-- Firebase Analytics was chosen to satisfy the SDK requirement and to log events without adding UI or architectural complexity.
+✅ 6-digit OTP generation
 
-## 4. GPT assistance vs my understanding
-- GPT helped scaffold the initial files and draft the OTP and logging logic.
-- I reviewed the flow, validated each requirement (expiry, attempts, logging, timer), and integrated Firebase Analytics with the correct package name.
+✅ OTP expiry after 60 seconds
 
-## Setup instructions
-1. Open the project in Android Studio: `OtpApp/`.
-2. Ensure `app/google-services.json` exists (already added).
-3. Sync Gradle and run the app on an emulator/device.
+✅ Maximum 3 validation attempts
+
+✅ Automatic OTP overwrite for same email
+
+✅ Event logging using Firebase Analytics
+
+✅ Clean and simple implementation (no backend persistence)
+
+🧠 OTP Logic Implementation
+1️⃣ OTP Generation
+
+OtpManager.generateOtp(email) performs the following:
+
+Generates a 6-digit numeric OTP
+
+Stores:
+
+otp
+
+generatedAtMillis
+
+remainingAttempts = 3
+
+If an OTP already exists for the email, it overwrites the previous one
+
+2️⃣ OTP Validation
+
+validateOtp(email, otp) checks in the following order:
+
+OTP exists
+
+OTP not expired (valid for 60 seconds)
+
+Remaining attempts available
+
+OTP match
+
+Validation Results:
+
+❌ Not found
+
+⏳ Expired
+
+🚫 Attempts exhausted
+
+❌ Incorrect OTP (attempts decrease)
+
+✅ Success
+
+Attempts are decremented only if OTP exists and validation fails.
+
+🗂 Data Structure Used
+MutableMap<String, OtpData>
+
+Why this structure?
+
+🔹 Keyed by email
+
+🔹 Provides O(1) access time
+
+🔹 Keeps OTPs isolated per user
+
+🔹 No persistence required (in-memory storage)
+
+🔹 Simple and efficient for demo purposes
+
+📊 External SDK Integration
+🔥 Firebase Analytics
+
+Firebase Analytics was integrated to:
+
+Log OTP generation events
+
+Log OTP validation attempts
+
+Track success/failure cases
+
+Fulfill the external SDK requirement
+
+Why Firebase Analytics?
+
+Lightweight integration
+
+No additional UI complexity
+
+Production-ready logging system
+
+Industry-standard analytics tool
+
+🤖 GPT Assistance vs My Understanding
+GPT Helped With:
+
+Initial project scaffolding
+
+Drafting OTP logic structure
+
+Firebase Analytics setup guidance
+
+My Contribution:
+
+Reviewed and verified complete OTP flow
+
+Implemented expiry logic (60 seconds)
+
+Implemented attempt restriction (3 tries)
+
+Integrated Firebase Analytics with correct package name
+
+Ensured logging and timer functionality works properly
+
+⚙️ Setup Instructions
+1️⃣ Open Project
+
+Open the project in Android Studio:
+
+OtpApp/
+
+2️⃣ Firebase Configuration
+
+Ensure the following file exists:
+
+app/google-services.json
+
+
+(It is already added in the project.)
+
+3️⃣ Sync & Run
+
+Sync Gradle
+
+Run the app on emulator or physical device
+
+⏱ OTP Rules Summary
+Rule	Value
+OTP Length	6 digits
+Expiry Time	60 seconds
+Max Attempts	3
+Storage Type	In-memory (MutableMap)
+🚀 Future Improvements
+
+Backend-based OTP storage
+
+SMS/email OTP delivery
+
+Encryption for enhanced security
+
+Room database integration
+
+UI improvements with Material Design
+
+📌 Tech Stack
+
+Kotlin
+
+Android SDK
+
+Firebase Analytics
+
+Android Studio
