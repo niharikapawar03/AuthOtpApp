@@ -3,15 +3,15 @@
 A simple Android application that demonstrates secure OTP (One-Time Password) generation and validation logic, including expiry handling, attempt limits, and Firebase Analytics integration.
 
 📌 Features
-✅ 6-digit OTP generation
-✅ OTP expiry after 60 seconds
-✅ Maximum 3 validation attempts
-✅ Automatic OTP overwrite for same email
-✅ Event logging using Firebase Analytics
-✅ Clean and simple implementation (no backend persistence)
+1. 6-digit OTP generation
+2. OTP expiry after 60 seconds
+3. Maximum 3 validation attempts
+4. Automatic OTP overwrite for same email
+5. Event logging using Firebase Analytics
+6. Clean and simple implementation (no backend persistence)
 
-🧠 OTP Logic Implementation
-1️⃣ OTP Generation
+> OTP Logic Implementation
+1️. OTP Generation
 OtpManager.generateOtp(email) performs the following:
 Generates a 6-digit numeric OTP
 Stores:
@@ -19,18 +19,18 @@ otp
 generatedAtMillis
 remainingAttempts = 3
 If an OTP already exists for the email, it overwrites the previous one
-2️⃣ OTP Validation
+2. OTP Validation
 validateOtp(email, otp) checks in the following order:
 OTP exists
 OTP not expired (valid for 60 seconds)
 Remaining attempts available
 OTP match
 Validation Results:
-❌ Not found
-⏳ Expired
-🚫 Attempts exhausted
-❌ Incorrect OTP (attempts decrease)
-✅ Success
+ Not found
+ Expired
+ Attempts exhausted
+ Incorrect OTP (attempts decrease)
+ Success
 Attempts are decremented only if OTP exists and validation fails.
 
 🗂 Data Structure Used
