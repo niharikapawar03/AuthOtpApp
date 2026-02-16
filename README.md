@@ -46,57 +46,94 @@ Why this structure?
 🔥 Firebase Analytics
 
 Firebase Analytics was integrated to:
+
 Log OTP generation events
+
 Log OTP validation attempts
+
 Track success/failure cases
+
 Fulfill the external SDK requirement
+
 Why Firebase Analytics?
+
 Lightweight integration
+
 No additional UI complexity
+
 Production-ready logging system
+
 Industry-standard analytics tool
 
 🤖 GPT Assistance vs My Understanding
+
 GPT Helped With:
+
 Initial project scaffolding
+
 Drafting OTP logic structure
+
 Firebase Analytics setup guidance
+
 My Contribution:
+
 Reviewed and verified complete OTP flow
+
 Implemented expiry logic (60 seconds)
+
 Implemented attempt restriction (3 tries)
+
 Integrated Firebase Analytics with correct package name
+
 Ensured logging and timer functionality works properly
 
 ⚙️ Setup Instructions
+
 1️⃣ Open Project
+
 Open the project in Android Studio:
 OtpApp/
+
 2️⃣ Firebase Configuration
+
 Ensure the following file exists:
 app/google-services.json
 
 3️⃣ Sync & Run
+
 Sync Gradle
+
 Run the app on emulator or physical device
 
 ⏱ OTP Rules Summary
+
 Rule	Value
+
 OTP Length	6 digits
+
 Expiry Time	60 seconds
+
 Max Attempts	3
+
 Storage Type	In-memory (MutableMap)
+
 🚀 Future Improvements
+
 Backend-based OTP storage
+
 SMS/email OTP delivery
+
 Encryption for enhanced security
+
 Room database integration
+
 UI improvements with Material Design
 
 📌 Tech Stack
 
 Kotlin
 Android SDK
+
 Firebase Analytics
 
 Android Studio
